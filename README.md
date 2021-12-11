@@ -5,4 +5,4 @@ ___
 #### Useful links:
 
 * <a href="https://www.browserstack.com/">BrowserStack</a>
-* <a href="https://app-live.browserstack.com/">To run simple app guide</a>
+* <a href="https://app-live.browserstack.com/">Guide to run simple app</a>
