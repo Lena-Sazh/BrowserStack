@@ -1,8 +1,9 @@
-package tests;
+package tests.samples;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,15 +12,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-
 public class BrowserStackAndroidSampleTests {
-    public static void main(String[] args) throws MalformedURLException, InterruptedException {
-
+    @Test
+    void SearchTest() throws MalformedURLException, InterruptedException {
         DesiredCapabilities caps = new DesiredCapabilities();
 
         // Set your access credentials
-        caps.setCapability("browserstack.user", "elenasazhina_hjxu5M");
-        caps.setCapability("browserstack.key", "spEk75scz4V5QxRxqHFw");
+        caps.setCapability("browserstack.user", "bsuser_I6EvoW");
+        caps.setCapability("browserstack.key", "d1pLpACFqg7ngcyXp4gq");
 
         // Set URL of the application under test
         caps.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
@@ -30,7 +30,7 @@ public class BrowserStackAndroidSampleTests {
 
         // Set other BrowserStack capabilities
         caps.setCapability("project", "First Java Project");
-        caps.setCapability("build", "Java Android");
+        caps.setCapability("build", "browserstack-build-1");
         caps.setCapability("name", "first_test");
 
 
@@ -38,7 +38,6 @@ public class BrowserStackAndroidSampleTests {
         // and desired capabilities defined above
         AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                 new URL("http://hub.browserstack.com/wd/hub"), caps);
-
 
         // Test case for the BrowserStack sample Android app.
         // If you have uploaded your app, update the test case here.
@@ -58,6 +57,5 @@ public class BrowserStackAndroidSampleTests {
 
         // Invoke driver.quit() after the test is done to indicate that the test is completed.
         driver.quit();
-
     }
 }

@@ -2,17 +2,22 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:browserstack.properties"})
-public interface BrowserStackConfig extends Config {
+@Config.Sources({"classpath:credentials.properties"})
+public
+interface BrowserStackConfig extends Config {
 
-    @Key("userName")
-    String userName();
+    @Key("url")
+    String url();
 
-    @Key("mobileKey")
-    String mobileKey();
+    @Key("session")
+    String session();
 
-    @Key("appURL")
-    String appURL();
+    @Key("user")
+    String name();
+
+    @Key("key")
+    String key();
+
+    @Key("app")
+    String app();
 }
-
-

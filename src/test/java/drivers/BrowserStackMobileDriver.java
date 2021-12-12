@@ -15,13 +15,14 @@ public class BrowserStackMobileDriver implements WebDriverProvider {
 
     public static BrowserStackConfig config = ConfigFactory.create(BrowserStackConfig.class);
 
-    String user = config.userName();
-    String key = config.mobileKey();
-    String url = config.appURL();
+    static String url = config.url();
+    static String user = config.name();
+    static String key = config.key();
+    static String app = config.app();
 
     public static URL getBrowserstackUrl() {
         try {
-            return new URL("http://hub.browserstack.com/wd/hub");
+            return new URL(url);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -36,7 +37,7 @@ public class BrowserStackMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("browserstack.key", key);
 
         // Set URL of the application under test
-        desiredCapabilities.setCapability("app", url);
+        desiredCapabilities.setCapability("app", app);
 
         // Specify device and os_version for testing
         desiredCapabilities.setCapability("device", "Google Pixel 3");

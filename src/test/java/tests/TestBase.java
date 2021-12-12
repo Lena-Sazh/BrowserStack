@@ -14,11 +14,9 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.Attach.getSessionId;
 
 public class TestBase {
-
     @BeforeAll
     public static void setup() {
         addListener("AllureSelenide", new AllureSelenide());
-
         Configuration.browser = BrowserStackMobileDriver.class.getName();
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
@@ -33,14 +31,9 @@ public class TestBase {
     @AfterEach
     public void afterEach() {
         String sessionId = getSessionId();
-
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-//        Attach.browserConsoleLogs();
-
         closeWebDriver();
-
         Attach.attachVideo(sessionId);
-
     }
 }

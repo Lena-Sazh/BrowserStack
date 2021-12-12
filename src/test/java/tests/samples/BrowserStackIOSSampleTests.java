@@ -1,10 +1,8 @@
-package tests;
+package tests.samples;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,16 +10,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BrowserStackIosSampleTests {
-
-
-    @Test
+public class BrowserStackIOSSampleTests {
+    // @Test
     void searchTest() throws MalformedURLException, InterruptedException {
         DesiredCapabilities caps = new DesiredCapabilities();
 
         // Set your access credentials
-        caps.setCapability("browserstack.user", "elenasazhina_hjxu5M");
-        caps.setCapability("browserstack.key", "spEk75scz4V5QxRxqHFw");
+        caps.setCapability("browserstack.user", "bsuser_I6EvoW");
+        caps.setCapability("browserstack.key", "d1pLpACFqg7ngcyXp4gq");
 
         // Set URL of the application under test
         caps.setCapability("app", "bs://444bd0308813ae0dc236f8cd461c02d3afa7901d");
@@ -30,9 +26,10 @@ public class BrowserStackIosSampleTests {
         caps.setCapability("device", "iPhone XS");
         caps.setCapability("os_version", "12");
 
+
         // Set other BrowserStack capabilities
         caps.setCapability("project", "First Java Project");
-        caps.setCapability("build", "Java iOS");
+        caps.setCapability("build", "browserstack-build-1");
         caps.setCapability("name", "first_test");
 
 
@@ -40,7 +37,6 @@ public class BrowserStackIosSampleTests {
         // and desired capabilities defined above
         IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(
                 new URL("http://hub-cloud.browserstack.com/wd/hub"), caps);
-
 
         // Test case for the BrowserStack sample iOS app.
         // If you have uploaded your app, update the test case here.
