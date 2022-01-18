@@ -1,5 +1,5 @@
-### QA Guru / HW №21
-#### Mobile test automation examples with BrowserStack
+#### QA Guru / HW №21
+### Mobile test automation examples with BrowserStack
 ___
 
 #### Useful links:
